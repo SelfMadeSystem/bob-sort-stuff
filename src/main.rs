@@ -13,7 +13,7 @@ Sorts (for example):
     ├── Cat, Dog.txt
     ├── Dog, Cat.txt
     ├── I like Cats and Dogs.txt
-    ├── Johnathon Smith - Matt's adventures.txt
+    ├── Johnathon Smith - The adventures of Matt.txt
     ├── Smith, Matt - Book_Title.txt
     └── wtf Matt_Smith.txt
 
@@ -33,7 +33,7 @@ into:
 │       └── wtf Matt_Smith.txt
 └── unsorted
     ├── I like Cats and Dogs.txt
-    └── Johnathon Smith - Matt's adventures.txt
+    └── Johnathon Smith - The adventures of Matt.txt
 
 Basically, it sorts files into folders based on the author's name.
 If the book is already in the correct folder, it will be renamed to avoid
@@ -61,7 +61,7 @@ filenames would match:
 
 The following filenames would not match:
 
-    Johnathon Smith - Matt's adventures.txt
+    Johnathon Smith - The adventures of Matt.txt
     Cat, Dog.txt
     Dog, Cat.txt
     I like Cats and Dogs.txt
@@ -89,7 +89,7 @@ impl OptWrite for Option<&mut fs::File> {
 }
 
 fn matches_keywords(filename: &str, keywords: &Vec<String>) -> bool {
-    let mut indexes = Vec::new();
+    let mut all_indexes = Vec::new();
 
     for keyword in keywords {
         let index = filename.find(keyword);
@@ -97,20 +97,52 @@ fn matches_keywords(filename: &str, keywords: &Vec<String>) -> bool {
             return false;
         }
         let index = index.unwrap();
-        indexes.push((index, index + keyword.len()));
+        all_indexes.push((index, index + keyword.len()));
     }
 
-    indexes.sort_by(|a, b| a.0.cmp(&b.0));
+    all_indexes.sort_by(|a, b| a.0.cmp(&b.0));
 
-    let mut last_end = indexes[0].1;
-    for (start, end) in indexes.iter().skip(1) {
+    println!("indexes: {:?}", all_indexes);
+
+    let mut last_end = all_indexes[0].1;
+    for (start, end) in all_indexes.iter().skip(1) {
+        if *start < last_end {
+            return false;
+        }
         if start - last_end > 2 {
             return false;
+        }
+        for c in filename.chars().skip(last_end).take(*start - last_end) {
+            if c.is_alphanumeric() {
+                return false;
+            }
         }
         last_end = *end;
     }
 
     true
+}
+
+#[test]
+fn test_matches() {
+    let author_titles: Vec<(&str, &str)> = vec![
+        ("C S Lewis", "Mere Christianity - Lewis_ C.S_") // doesn't match.
+        // Reason:
+        // - A first "C" is found in the 6th character
+        // - A first "S" is found in the 10th character
+        // - "Lewis" is found in the 21st character
+        // The first "C" and "S" are separated by 3 characters, which is more than 2.
+        // The first "S" and "Lewis" are separated by 11 characters, which is more than 2.
+        // Ideally, we would match all the characters, so for example "C" would be found in
+        // the 6th character and the 28th character, and "S" would be found in the 10th
+        // character, the 25th character, and the 30th character.
+    ];
+
+    for (author, title) in author_titles {
+        let keywords = get_keywords(author);
+        let title = title.to_lowercase();
+        assert!(matches_keywords(&title, &keywords));
+    }
 }
 
 fn get_keywords(author: &str) -> Vec<String> {
@@ -184,39 +216,44 @@ fn main() {
         .write(format!("\n\nAuthors: {}\nUnsorted: {}\n\n", args[1], args[2]).as_bytes())
         .unwrap();
 
-    let unordered_dir = fs::read_dir(unsorted_dir).unwrap();
-    fun_name(unordered_dir, authors, &log_file, &mut verbose_log_file.as_mut());
+    fun_name(
+        unsorted_dir,
+        &authors,
+        &log_file,
+        &mut verbose_log_file.as_mut(),
+    );
 }
 
 fn fun_name(
-    unordered_dir: fs::ReadDir,
-    authors: Vec<(Vec<String>, String, PathBuf)>,
+    unordered_dir: &Path,
+    authors: &Vec<(Vec<String>, String, PathBuf)>,
     mut log_file: &fs::File,
     verbose_log_file: &mut Option<&mut fs::File>,
 ) {
-    for entry in unordered_dir {
-        let entry = entry.unwrap();
-        let path = entry.path();
-
+    let unordered_dir = fs::read_dir(unordered_dir).unwrap();
+    let unordered_paths = unordered_dir
+        .map(|entry| entry.unwrap().path())
+        .collect::<Vec<_>>();
+    for (keywords, author_name, author_path) in authors {
         verbose_log_file
-            .write(format!("(Chck) `{}`\n", path.display()).as_bytes())
+            .write(format!("Author `{}`\n", author_name).as_bytes())
             .unwrap();
 
-        if path.is_file() {
-            let filename = path
-                .clone()
-                .file_name()
-                .unwrap()
-                .to_str()
-                .unwrap()
-                .to_owned();
+        for path in &unordered_paths {
+            if path.is_file() {
+                let filename = path
+                    .clone()
+                    .file_name()
+                    .unwrap()
+                    .to_str()
+                    .unwrap()
+                    .to_owned();
 
-            let lower_filename = filename.to_lowercase();
+                let lower_filename = filename.to_lowercase();
 
-            for (keywords, author_name, author_path) in &authors {
                 verbose_log_file
                     .write(
-                        format!("(Chck) `{}` against `{}`\n", lower_filename, author_name).as_bytes(),
+                        format!(" Check `{}` for `{}`\n", author_name, lower_filename).as_bytes(),
                     )
                     .unwrap();
 
@@ -251,17 +288,15 @@ fn fun_name(
                     }
                     log_file.write(log.as_bytes()).unwrap();
                     verbose_log_file.write(log.as_bytes()).unwrap();
-                    break;
+                    continue;
                 }
+            } else if path.is_dir() {
+                verbose_log_file
+                    .write(format!("(Dir ) `{}`\n", path.display()).as_bytes())
+                    .unwrap();
+
+                fun_name(&path, &authors, log_file, verbose_log_file);
             }
-        } else {
-            verbose_log_file
-                .write(format!("(Dir) `{}`\n", path.display()).as_bytes())
-                .unwrap();
-
-            let unordered_dir = fs::read_dir(path).unwrap();
-
-            fun_name(unordered_dir, authors.clone(), log_file, verbose_log_file);
         }
     }
 }

@@ -3,47 +3,48 @@
 Authors: testdir/authors/
 Unsorted: testdir/unsorted/
 
-(Chck) `testdir/unsorted/Cat, Dog the OwO.txt`
-(Chck) `cat, dog the owo.txt` against `Cat Dog`
+Author `Cat Dog`
+ Check `Cat Dog` for `cat, dog the owo.txt`
 [Move] `Cat Dog`	to	`Cat, Dog the OwO.txt`
-(Chck) `testdir/unsorted/Pat.txt`
-(Chck) `pat.txt` against `Cat Dog`
-(Chck) `pat.txt` against `Matt Smith`
-(Chck) `pat.txt` against `A Pat`
-[Move] `A Pat`	to	`Pat.txt`
-(Chck) `testdir/unsorted/Smith, Matt - Book_Title.txt`
-(Chck) `smith, matt - book_title.txt` against `Cat Dog`
-(Chck) `smith, matt - book_title.txt` against `Matt Smith`
-[Move] `Matt Smith`	to	`Smith, Matt - Book_Title.txt`
-(Chck) `testdir/unsorted/Book Title - Smith, Matt.txt`
-(Chck) `book title - smith, matt.txt` against `Cat Dog`
-(Chck) `book title - smith, matt.txt` against `Matt Smith`
--Dupl- `Matt Smith`	to	`Book Title - Smith, Matt - 1700316221256265805.txt`
-(Chck) `testdir/unsorted/wtf Matt_Smith.txt`
-(Chck) `wtf matt_smith.txt` against `Cat Dog`
-(Chck) `wtf matt_smith.txt` against `Matt Smith`
-[Move] `Matt Smith`	to	`wtf Matt_Smith.txt`
-(Chck) `testdir/unsorted/stuff`
-(Dir) `testdir/unsorted/stuff`
-(Chck) `testdir/unsorted/stuff/Book_Title_Matt_Smith.txt`
-(Chck) `book_title_matt_smith.txt` against `Cat Dog`
-(Chck) `book_title_matt_smith.txt` against `Matt Smith`
+ Check `Cat Dog` for `pat.txt`
+ Check `Cat Dog` for `smith, matt - book_title.txt`
+ Check `Cat Dog` for `book title - smith, matt.txt`
+ Check `Cat Dog` for `wtf matt_smith.txt`
+(Dir ) `testdir/unsorted/stuff`
+Author `Cat Dog`
+ Check `Cat Dog` for `book_title_matt_smith.txt`
+Author `Matt Smith`
+ Check `Matt Smith` for `book_title_matt_smith.txt`
 [Move] `Matt Smith`	to	`Book_Title_Matt_Smith.txt`
-(Chck) `testdir/unsorted/Johnathon Smith - Matt's adventures.txt`
-(Chck) `johnathon smith - matt's adventures.txt` against `Cat Dog`
-(Chck) `johnathon smith - matt's adventures.txt` against `Matt Smith`
-(Chck) `johnathon smith - matt's adventures.txt` against `A Pat`
-(Chck) `testdir/unsorted/Cat, Dog.txt`
-(Chck) `cat, dog.txt` against `Cat Dog`
+Author `A Pat`
+ Check `Cat Dog` for `johnathon smith - matt's adventures.txt`
+ Check `Cat Dog` for `cat, dog.txt`
 [Move] `Cat Dog`	to	`Cat, Dog.txt`
-(Chck) `testdir/unsorted/I like Cats and Dogs.txt`
-(Chck) `i like cats and dogs.txt` against `Cat Dog`
-(Chck) `i like cats and dogs.txt` against `Matt Smith`
-(Chck) `i like cats and dogs.txt` against `A Pat`
-(Chck) `testdir/unsorted/Dog, Cat.txt`
-(Chck) `dog, cat.txt` against `Cat Dog`
+ Check `Cat Dog` for `i like cats and dogs.txt`
+ Check `Cat Dog` for `dog, cat.txt`
 [Move] `Cat Dog`	to	`Dog, Cat.txt`
-(Chck) `testdir/unsorted/Book Title by Matt Smith.txt`
-(Chck) `book title by matt smith.txt` against `Cat Dog`
-(Chck) `book title by matt smith.txt` against `Matt Smith`
+ Check `Cat Dog` for `book title by matt smith.txt`
+Author `Matt Smith`
+ Check `Matt Smith` for `pat.txt`
+ Check `Matt Smith` for `smith, matt - book_title.txt`
+[Move] `Matt Smith`	to	`Smith, Matt - Book_Title.txt`
+ Check `Matt Smith` for `book title - smith, matt.txt`
+-Dupl- `Matt Smith`	to	`Book Title - Smith, Matt - 1700318843225998488.txt`
+ Check `Matt Smith` for `wtf matt_smith.txt`
+[Move] `Matt Smith`	to	`wtf Matt_Smith.txt`
+(Dir ) `testdir/unsorted/stuff`
+Author `Cat Dog`
+Author `Matt Smith`
+Author `A Pat`
+ Check `Matt Smith` for `johnathon smith - matt's adventures.txt`
+ Check `Matt Smith` for `i like cats and dogs.txt`
+ Check `Matt Smith` for `book title by matt smith.txt`
 [Move] `Matt Smith`	to	`Book Title by Matt Smith.txt`
+Author `A Pat`
+ Check `A Pat` for `pat.txt`
+(Dir ) `testdir/unsorted/stuff`
+Author `Cat Dog`
+Author `Matt Smith`
+Author `A Pat`
+ Check `A Pat` for `johnathon smith - matt's adventures.txt`
+ Check `A Pat` for `i like cats and dogs.txt`
