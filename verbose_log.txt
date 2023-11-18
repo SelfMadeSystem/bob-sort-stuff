@@ -1,0 +1,49 @@
+
+
+Authors: testdir/authors/
+Unsorted: testdir/unsorted/
+
+(Chck) `testdir/unsorted/Cat, Dog the OwO.txt`
+(Chck) `cat, dog the owo.txt` against `Cat Dog`
+[Move] `Cat Dog`	to	`Cat, Dog the OwO.txt`
+(Chck) `testdir/unsorted/Pat.txt`
+(Chck) `pat.txt` against `Cat Dog`
+(Chck) `pat.txt` against `Matt Smith`
+(Chck) `pat.txt` against `A Pat`
+[Move] `A Pat`	to	`Pat.txt`
+(Chck) `testdir/unsorted/Smith, Matt - Book_Title.txt`
+(Chck) `smith, matt - book_title.txt` against `Cat Dog`
+(Chck) `smith, matt - book_title.txt` against `Matt Smith`
+[Move] `Matt Smith`	to	`Smith, Matt - Book_Title.txt`
+(Chck) `testdir/unsorted/Book Title - Smith, Matt.txt`
+(Chck) `book title - smith, matt.txt` against `Cat Dog`
+(Chck) `book title - smith, matt.txt` against `Matt Smith`
+-Dupl- `Matt Smith`	to	`Book Title - Smith, Matt - 1700316221256265805.txt`
+(Chck) `testdir/unsorted/wtf Matt_Smith.txt`
+(Chck) `wtf matt_smith.txt` against `Cat Dog`
+(Chck) `wtf matt_smith.txt` against `Matt Smith`
+[Move] `Matt Smith`	to	`wtf Matt_Smith.txt`
+(Chck) `testdir/unsorted/stuff`
+(Dir) `testdir/unsorted/stuff`
+(Chck) `testdir/unsorted/stuff/Book_Title_Matt_Smith.txt`
+(Chck) `book_title_matt_smith.txt` against `Cat Dog`
+(Chck) `book_title_matt_smith.txt` against `Matt Smith`
+[Move] `Matt Smith`	to	`Book_Title_Matt_Smith.txt`
+(Chck) `testdir/unsorted/Johnathon Smith - Matt's adventures.txt`
+(Chck) `johnathon smith - matt's adventures.txt` against `Cat Dog`
+(Chck) `johnathon smith - matt's adventures.txt` against `Matt Smith`
+(Chck) `johnathon smith - matt's adventures.txt` against `A Pat`
+(Chck) `testdir/unsorted/Cat, Dog.txt`
+(Chck) `cat, dog.txt` against `Cat Dog`
+[Move] `Cat Dog`	to	`Cat, Dog.txt`
+(Chck) `testdir/unsorted/I like Cats and Dogs.txt`
+(Chck) `i like cats and dogs.txt` against `Cat Dog`
+(Chck) `i like cats and dogs.txt` against `Matt Smith`
+(Chck) `i like cats and dogs.txt` against `A Pat`
+(Chck) `testdir/unsorted/Dog, Cat.txt`
+(Chck) `dog, cat.txt` against `Cat Dog`
+[Move] `Cat Dog`	to	`Dog, Cat.txt`
+(Chck) `testdir/unsorted/Book Title by Matt Smith.txt`
+(Chck) `book title by matt smith.txt` against `Cat Dog`
+(Chck) `book title by matt smith.txt` against `Matt Smith`
+[Move] `Matt Smith`	to	`Book Title by Matt Smith.txt`
