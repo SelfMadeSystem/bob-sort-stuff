@@ -88,60 +88,169 @@ impl OptWrite for Option<&mut fs::File> {
     }
 }
 
+trait Between {
+    /// If `self` and `other` overlap, returns None.
+    /// Otherwise, returns the start and end indexes of the gap between `self` and `other`.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// assert_eq!(Some((3, 5)), (0, 3).between(&(5, 10)));
+    /// assert_eq!(Some((3, 5)), (5, 10).between(&(0, 3)));
+    /// assert_eq!(Some((3, 3)), (0, 3).between(&(3, 5)));
+    /// assert_eq!(None, (0, 3).between(&(2, 5)));
+    /// ```
+    fn between(&self, other: &Self) -> Option<(usize, usize)>;
+}
+
+impl Between for (usize, usize) {
+    fn between(&self, other: &Self) -> Option<(usize, usize)> {
+        if self.0 < other.0 {
+            if self.1 <= other.0 {
+                Some((self.1, other.0))
+            } else {
+                None
+            }
+        } else {
+            if other.1 <= self.0 {
+                Some((other.1, self.0))
+            } else {
+                None
+            }
+        }
+    }
+}
+
 fn matches_keywords(filename: &str, keywords: &Vec<String>) -> bool {
     let mut all_indexes = Vec::new();
 
     for keyword in keywords {
-        let index = filename.find(keyword);
-        if index.is_none() {
+        let matches = filename.match_indices(keyword).collect::<Vec<_>>();
+
+        if matches.is_empty() {
             return false;
         }
-        let index = index.unwrap();
-        all_indexes.push((index, index + keyword.len()));
+
+        all_indexes.push(
+            matches
+                .into_iter()
+                .map(|(i, s)| (i, i + s.len()))
+                .collect::<Vec<_>>(),
+        );
     }
 
-    all_indexes.sort_by(|a, b| a.0.cmp(&b.0));
-
-    println!("indexes: {:?}", all_indexes);
-
-    let mut last_end = all_indexes[0].1;
-    for (start, end) in all_indexes.iter().skip(1) {
-        if *start < last_end {
-            return false;
+    for indexes in all_indexes.first().expect("all_indexes is empty") {
+        if submatches(0, filename, &mut vec![indexes.clone()], indexes, &all_indexes) {
+            return true;
         }
-        if start - last_end > 2 {
-            return false;
-        }
-        for c in filename.chars().skip(last_end).take(*start - last_end) {
-            if c.is_alphanumeric() {
-                return false;
+    }
+
+    false
+}
+
+fn submatches(
+    arg: i32,
+    filename: &str,
+    mut current_indicies: &mut Vec<(usize, usize)>,
+    indexes: &(usize, usize),
+    all_indexes: &[Vec<(usize, usize)>],
+) -> bool {
+    if arg == all_indexes.len() as i32 - 1 {
+        return true;
+    }
+
+    let next_indexes = all_indexes[arg as usize + 1].clone();
+
+    for next_indexes in next_indexes {
+        if let Some((start, end)) = indexes.between(&next_indexes) {
+            if end - start <= 2 {
+                // make sure the gap between doesn't contain any alphanumeric characters
+                let gap = &filename[start..end];
+                if gap.chars().any(|c| c.is_alphanumeric()) {
+                    continue;
+                }
+                current_indicies.push(next_indexes.clone());
+                if submatches(
+                    arg + 1,
+                    filename,
+                    &mut current_indicies,
+                    &(next_indexes.0.min(indexes.0), next_indexes.1.max(indexes.1)),
+                    all_indexes,
+                ) {
+                    return true;
+                }
+            }
+        } else {
+            for current in current_indicies.clone() {
+                if let Some((start, end)) = current.between(&next_indexes) {
+                    if end - start <= 2 {
+                        // make sure the gap between doesn't contain any alphanumeric characters
+                        let gap = &filename[start..end];
+                        if gap.chars().any(|c| c.is_alphanumeric()) {
+                            continue;
+                        }
+                        current_indicies.push(next_indexes.clone());
+                        if submatches(
+                            arg + 1,
+                            filename,
+                            &mut current_indicies,
+                            &(next_indexes.0.min(current.0), next_indexes.1.max(current.1)),
+                            all_indexes,
+                        ) {
+                            return true;
+                        }
+                    }
+                }
             }
         }
-        last_end = *end;
     }
 
-    true
+    false
 }
 
 #[test]
 fn test_matches() {
-    let author_titles: Vec<(&str, &str)> = vec![
-        ("C S Lewis", "Mere Christianity - Lewis_ C.S_") // doesn't match.
-        // Reason:
-        // - A first "C" is found in the 6th character
-        // - A first "S" is found in the 10th character
-        // - "Lewis" is found in the 21st character
-        // The first "C" and "S" are separated by 3 characters, which is more than 2.
-        // The first "S" and "Lewis" are separated by 11 characters, which is more than 2.
-        // Ideally, we would match all the characters, so for example "C" would be found in
-        // the 6th character and the 28th character, and "S" would be found in the 10th
-        // character, the 25th character, and the 30th character.
+    let author_titles = vec![
+        (
+            "C S Lewis",
+            vec![
+                ("Mere Christianity - Lewis_ C.S_", true),
+                (
+                    "Space Trilogy 1 - Out Of The Silent Plan - Lewis_ C.S_",
+                    true,
+                ),
+            ],
+        ),
+        (
+            "Matt Smith",
+            vec![
+                ("Book Title - Smith, Matt.txt", true),
+                ("Book Title by Matt Smith.txt", true),
+                ("Book_Title_Matt_Smith.txt", true),
+                ("Smith, Matt - Book_Title.txt", true),
+                ("wtf Matt_Smith.txt", true),
+                ("Johnathon Smith - The adventures of Matt.txt", false),
+                ("Cat, Dog.txt", false),
+                ("Dog, Cat.txt", false),
+                ("I like Cats and Dogs.txt", false),
+            ],
+        ),
+        (
+            "T H White",
+            vec![
+                ("The.Last.Lie.by.Stephen.White", false),
+                ("White Gold Wielder - Stephen R. Donaldson", false),
+                ("The Sword In The Stone - T. H. White", true),
+            ],
+        ),
     ];
 
-    for (author, title) in author_titles {
+    for (author, titles) in author_titles {
         let keywords = get_keywords(author);
-        let title = title.to_lowercase();
-        assert!(matches_keywords(&title, &keywords));
+        for (title, bool) in titles {
+            let title = title.to_lowercase();
+            assert!(matches_keywords(&title, &keywords) == bool);
+        }
     }
 }
 

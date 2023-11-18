@@ -1,65 +1,7 @@
 
 
-Authors: testdir/authors/
-Unsorted: testdir/unsorted/
-
-[Move] `Cat Dog`	to	`Cat, Dog the OwO.txt`
-[Move] `Matt Smith`	to	`Book_Title_Matt_Smith.txt`
-[Move] `Cat Dog`	to	`Cat, Dog.txt`
-[Move] `Cat Dog`	to	`Dog, Cat.txt`
-[Move] `Matt Smith`	to	`Smith, Matt - Book_Title.txt`
--Dupl- `Matt Smith`	to	`Book Title - Smith, Matt - 1700318843225998488.txt`
-[Move] `Matt Smith`	to	`wtf Matt_Smith.txt`
-[Move] `Matt Smith`	to	`Book Title by Matt Smith.txt`
-
-
-Authors: sample/Authors/
-Unsorted: sample/0EpubCollection/
-
--Dupl- `P W Catanese`	to	`P. W. Catanese - Books of Umber 02 - Dragon Games - 1700323844208271315.epub`
--Dupl- `R Van Saint`	to	`R. Van Saint - Sid Valentine - 1700323844209582354.epub`
-[Move] `C J Cherryh`	to	`Regenesis - C. J. Cherryh.epub`
--Dupl- `P A Seasholtz`	to	`P.A. Seasholtz - Heart of Hauden - 1700323844230007516.epub`
-[Move] `J K Rowling`	to	`Rowling, JK - Harry Potter And The Deathly Hallows.epub`
--Dupl- `R J Lopez`	to	`R. J. Lopez - New Tiber, A Tale of Blood Stripe Company - 1700323844240878763.epub`
--Dupl- `S J Day`	to	`S. J. Day - Marked 03 - Eve of Chaos - 1700323844277406372.epub`
-[Move] `P D James`	to	`P D James - [Adam Dalgliesh 08] - Devices & Desires (epub).epub`
-[Move] `K D Wentworth`	to	`The Orangery - K. D. Wentworth.epub`
-[Move] `Lee Child`	to	`Without Fail - Lee Child.epub`
--Dupl- `R G King`	to	`R. G. King - The Skin Underneath - 1700323844451657868.epub`
--Dupl- `S R Davis`	to	`S. R. Davis - New Frontiers - 1700323844507604880.epub`
-[Move] `C K Chandra`	to	`Not A Game Invasion - C. K. Chandra.epub`
-[Move] `N K Jemisin`	to	`N K Jemisin - [Inheritance 02] - The Broken Kingdoms (epub).epub`
-[Move] `F M Busby`	to	`Rissa And Tregare - F. M. Busby.epub`
-[Move] `C J Sansom`	to	`Sansom, C J - Winter In Madrid.epub`
-[Move] `D F Jones`	to	`The Great Gray Plague - Raymond F. Jones.epub`
--Dupl- `S L Viehl`	to	`S. L. Viehl - Stardoc 09 - Crystal Healer - 1700323844800589866.epub`
--Dupl- `S L Viehl`	to	`S. L. Viehl - Stardoc 10 - Dream Called Time - 1700323844802669867.epub`
-[Move] `K J Parker`	to	`The Escapement (Engineer Trilogy) - K. J. Parker.epub`
-[Move] `Alexander Key`	to	`The Incredible Tide - Alexander Key.epub`
-[Move] `Alexander Key`	to	`The Sword Of Aradel - Alexander Key.epub`
-[Move] `Alexander Key`	to	`The Devils Jaw - Alexander Key.epub`
-[Move] `Alexander Key`	to	`Saltwater Scramble - Alexander Key.epub`
-[Move] `Alexander Key`	to	`The Golden Enemy - Alexander Key.epub`
-[Move] `Alexander Key`	to	`The Strange White Doves - Alexander Key.epub`
-[Move] `J G Ballard`	to	`Super - Cannes - J. G. Ballard.epub`
-[Move] `J G Ballard`	to	`The Drowned World - J.G. Ballard.epub`
-[Move] `P C Cast`	to	`P. C. Cast & Kristin Cast - House of Night 06 - Tempted.epub`
-[Move] `P C Cast`	to	`P. C. Cast & Kristin Cast - House of Night 07 - Burned.epub`
--Dupl- `S M Stirling`	to	`S. M. Stirling - Shadowspawn 01 - A Taint in the Blood - 1700323845126038224.epub`
-[Move] `S M Stirling`	to	`S M Stirling - [Change 04] - The High King of Montival (v5.0) (epub).epub`
-[Move] `S M Stirling`	to	`S. M. Stirling - The Change 04 - The High King of Montival.epub`
--Dupl- `R M Meluch`	to	`R. M. Meluch - Wolf Star - 1700323845133994824.epub`
--Dupl- `R M Meluch`	to	`R. M. Meluch - The - Myriad - 1700323845136697908.epub`
-[Move] `C L Moore`	to	`Vintage Season - Henry Kuttner & C. L. Moore.epub`
-[Move] `G C Edmondson`	to	`One Plus One Equals Eleven - G. C. Edmondson.epub`
-[Move] `Dean Ing`	to	`The Houses Of The Kzinti (Man - Kzin Wars) - Jerry Pournelle, S.M. Stirling, Dean Ing.epub`
-[Move] `Dean Ing`	to	`The Ransom Of Black Stealth One - Dean Ing.epub`
-[Move] `Ted Bell`	to	`Ted Bell - [Alexander Hawke 06] - Warlord (epub).epub`
-
-
-Authors: sample/Authors/
-Unsorted: sample/loose4/
+Authors: sample/stuff/Authors/
+Unsorted: sample/stuff/loose4/
 
 [Move] `J K Rowling`	to	`Harry Potter 5 - Harry Potter and the Or - Rowling_ J.K_.epub`
 [Move] `J K Rowling`	to	`Harry Potter 7 - Harry Potter and the De - Rowling_ J.K_.epub`
@@ -68,6 +10,8 @@ Unsorted: sample/loose4/
 [Move] `J K Rowling`	to	`Harry Potter 1 - Harry Potter and the So - Rowling_ J.K_.epub`
 [Move] `J K Rowling`	to	`Harry Potter 4 - Harry Potter and The Go - Rowling_ J.K_.epub`
 [Move] `J K Rowling`	to	`Harry Potter 2 - Harry Potter and The Ch - Rowling_ J.K_.epub`
+[Move] `H G Wells`	to	`the_world_set_free_h_g_wells.epub`
+[Move] `P D James`	to	`Children of Men - James_ P. D_.epub`
 [Move] `Lee Child`	to	`Bad Luck and Trouble_ A Reacher Novel - Lee Child.epub`
 [Move] `Lee Child`	to	`Running Blind_ A Reacher Novel - Lee Child.epub`
 [Move] `Lee Child`	to	`Killing floor_ A Reacher Novel - Lee Child.epub`
@@ -75,52 +19,91 @@ Unsorted: sample/loose4/
 [Move] `Lee Child`	to	`Die Trying_ A Reacher Novel - Lee Child.epub`
 [Move] `Lee Child`	to	`Tripwire_ A Reacher Novel - Lee Child.epub`
 [Move] `J D Salinger`	to	`The Catcher in the Rye - Salinger_ J.D_.epub`
--Dupl- `C J Sansom`	to	`Heartstone - Sansom_ C. J_ - 1700323906963835452.epub`
+-Dupl- `C J Sansom`	to	`Heartstone - Sansom_ C. J_ - 1700329001142044919.epub`
 [Move] `J G Ballard`	to	`Crash - Ballard_ J.G_.epub`
+[Move] `C S Lewis`	to	`Narnia 1 - The Lion, The Witch and The W - Lewis_ C.S_.epub`
+[Move] `C S Lewis`	to	`Space Trilogy 1 - Out Of The Silent Plan - Lewis_ C.S_.epub`
+[Move] `C S Lewis`	to	`Space Trilogy 2 - Perelandra - Lewis_ C.S_.epub`
+[Move] `C S Lewis`	to	`Narnia 4 - The Silver Chair - Lewis_ C.S_.epub`
+[Move] `C S Lewis`	to	`Mere Christianity - Lewis_ C.S_.epub`
+[Move] `C S Lewis`	to	`The Screwtape Letters - Lewis_ C.S_.epub`
+[Move] `C S Lewis`	to	`Narnia 6 - The Magician's Nephew - Lewis_ C.S_.epub`
+[Move] `C S Lewis`	to	`Narnia 5 - The Horse and His Boy - Lewis_ C.S_.epub`
+[Move] `C S Lewis`	to	`Narnia 3 - The Voyage of the Dawn Treade - Lewis_ C.S_.epub`
+[Move] `C S Lewis`	to	`Narnia 2 - Prince Caspian - Lewis_ C.S_.epub`
+[Move] `C S Lewis`	to	`Narnia 7 - The Last Battle - Lewis_ C.S_.epub`
+[Move] `C S Lewis`	to	`Space Trilogy 3 - That Hideous Strength - Lewis_ C.S_.epub`
 
 
-Authors: sample/Authors/
-Unsorted: sample/loose4/
+Authors: sample/stuff/Authors/
+Unsorted: sample/stuff/0EpubCollection/
 
-
-
-Authors: sample/Authors/
-Unsorted: sample/loose4/
-
-[Move] `Terry Pratchett`	to	`Discworld 24 - Fifth Elephant - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 35 - Wintersmith - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 23 - Carpe Jugulum - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 29 - Night Watch - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 11 - Reaper Man - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 31 - The Wee Free Men - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 17 - Interesting Times - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 02 - The Light Fantastic - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 30 - Thud! - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 33 - Going Postal - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 18 - Maskerade - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 04 - Mort - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 36 - Making Money - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 22 - The Last Continent - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 19 - Feet of Clay - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 03 - Equal Rites - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 21 - Jingo - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 32 - A Hat Full Of Sky - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 05 - Sourcery - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 15 - Men at Arms - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 09 - Eric - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 30 - Monstrous Regiment - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 10 - Moving Pictures - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 01 - The Colour of Magic - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 08 - Guards! Guards! - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 26 - The Thief of Time - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 14 - Lords and Ladies - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 28 - The Amazing Maurice and H - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 27 - The Last Hero - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 20 - Hogfather - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Disworld 25 - The Truth - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 12 - Witches Abroad - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 37 - Unseen Academicals - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 07 - Pyramids - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 16 - Soul Music - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 06 - Wyrd Sisters - Pratchett_ Terry.epub`
-[Move] `Terry Pratchett`	to	`Discworld 13 - Small Gods - Pratchett_ Terry.epub`
+[Move] `E C Tubb`	to	`Poor Henry - E. C. Tubb.epub`
+-Dupl- `P W Catanese`	to	`P. W. Catanese - Books of Umber 02 - Dragon Games - 1700329017585551180.epub`
+-Dupl- `R Van Saint`	to	`R. Van Saint - Sid Valentine - 1700329017587879384.epub`
+[Move] `C J Cherryh`	to	`Regenesis - C. J. Cherryh.epub`
+-Dupl- `P A Seasholtz`	to	`P.A. Seasholtz - Heart of Hauden - 1700329017617997838.epub`
+[Move] `J K Rowling`	to	`Rowling, JK - Harry Potter And The Deathly Hallows.epub`
+-Dupl- `R J Lopez`	to	`R. J. Lopez - New Tiber, A Tale of Blood Stripe Company - 1700329017634202890.epub`
+-Dupl- `S J Day`	to	`S. J. Day - Marked 03 - Eve of Chaos - 1700329017693194736.epub`
+[Move] `M T Murphy`	to	`Point Of Departure - Pat Murphy.epub`
+[Move] `P D James`	to	`P D James - [Adam Dalgliesh 08] - Devices & Desires (epub).epub`
+[Move] `K D Wentworth`	to	`The Orangery - K. D. Wentworth.epub`
+[Move] `Lee Child`	to	`Without Fail - Lee Child.epub`
+-Dupl- `R G King`	to	`R. G. King - The Skin Underneath - 1700329017956547910.epub`
+[Move] `R G King`	to	`King Rat.epub`
+-Dupl- `S R Davis`	to	`S. R. Davis - New Frontiers - 1700329018039130850.epub`
+[Move] `D D Sharp`	to	`The Satellite Of Doom - D. D. Sharp.epub`
+[Move] `D D Sharp`	to	`The Eternal Man - D. D. Sharp.epub`
+[Move] `C K Chandra`	to	`Not A Game Invasion - C. K. Chandra.epub`
+[Move] `N K Jemisin`	to	`N K Jemisin - [Inheritance 02] - The Broken Kingdoms (epub).epub`
+[Move] `F M Busby`	to	`Rissa And Tregare - F. M. Busby.epub`
+[Move] `A R Morlan`	to	`The Hikikomori's Cartoon Kimono - A. R. Morlan.epub`
+[Move] `A R Morlan`	to	`The Anabe Girls - A. R. Morlan.epub`
+[Move] `J L Hensley`	to	`The Black Roads - J. L. Hensley.epub`
+[Move] `C J Sansom`	to	`Sansom, C J - Winter In Madrid.epub`
+[Move] `D F Jones`	to	`The River And The Dream - Raymond F. Jones, Kelly Freas.epub`
+[Move] `D F Jones`	to	`The Great Gray Plague - Raymond F. Jones.epub`
+[Move] `D F Jones`	to	`The Memory Of Mars - Raymond F. Jones.epub`
+[Move] `D F Jones`	to	`Person From Porlock - Raymond F. Jones.epub`
+-Dupl- `S L Viehl`	to	`S. L. Viehl - Stardoc 09 - Crystal Healer - 1700329018446731451.epub`
+-Dupl- `S L Viehl`	to	`S. L. Viehl - Stardoc 10 - Dream Called Time - 1700329018449644936.epub`
+[Move] `M P Shiel`	to	`Phorfor - M. P. Shiel.epub`
+[Move] `K J Parker`	to	`The Escapement (Engineer Trilogy) - K. J. Parker.epub`
+[Move] `F A Javor`	to	`The Rim - World Legacy - F. A. Javor.epub`
+[Move] `Alexander Key`	to	`The Incredible Tide - Alexander Key.epub`
+[Move] `Alexander Key`	to	`The Sword Of Aradel - Alexander Key.epub`
+[Move] `Alexander Key`	to	`The Devils Jaw - Alexander Key.epub`
+[Move] `Alexander Key`	to	`Saltwater Scramble - Alexander Key.epub`
+[Move] `Alexander Key`	to	`The Golden Enemy - Alexander Key.epub`
+[Move] `Alexander Key`	to	`The Strange White Doves - Alexander Key.epub`
+[Move] `T H White`	to	`The Sword In The Stone - T. H. White.epub`
+[Move] `J G Ballard`	to	`Super - Cannes - J. G. Ballard.epub`
+[Move] `J G Ballard`	to	`The Drowned World - J.G. Ballard.epub`
+[Move] `P C Cast`	to	`P. C. Cast & Kristin Cast - House of Night 06 - Tempted.epub`
+[Move] `P C Cast`	to	`P. C. Cast & Kristin Cast - House of Night 07 - Burned.epub`
+[Move] `H L Gold`	to	`Problem In Murder - H. L. Gold.epub`
+[Move] `H L Gold`	to	`The Biography Project - H. L. Gold.epub`
+[Move] `H L Gold`	to	`Trouble With Water - H. L. Gold.epub`
+[Move] `H L Gold`	to	`The Man With English - H. L. Gold.epub`
+[Move] `H L Gold`	to	`No Charge For Alterations - H. L. Gold.epub`
+[Move] `H L Gold`	to	`The Old Die Rich - H. L. Gold.epub`
+-Dupl- `S M Stirling`	to	`S. M. Stirling - Shadowspawn 01 - A Taint in the Blood - 1700329018864664311.epub`
+[Move] `S M Stirling`	to	`The Houses Of The Kzinti (Man - Kzin Wars) - Jerry Pournelle, S.M. Stirling, Dean Ing.epub`
+[Move] `S M Stirling`	to	`S M Stirling - [Change 04] - The High King of Montival (v5.0) (epub).epub`
+[Move] `S M Stirling`	to	`S. M. Stirling - The Change 04 - The High King of Montival.epub`
+[Move] `S M Stirling`	to	`The Sunrise Lands - S. M. Stirling.epub`
+-Dupl- `R M Meluch`	to	`R. M. Meluch - Wolf Star - 1700329018874968888.epub`
+-Dupl- `R M Meluch`	to	`R. M. Meluch - The - Myriad - 1700329018878566112.epub`
+[Move] `C L Moore`	to	`Prisoner In The Skull - Henry Kuttner & C. L. Moore.epub`
+[Move] `C L Moore`	to	`Open Secret - Henry Kuttner & C. L. Moore.epub`
+[Move] `C L Moore`	to	`Vintage Season - Henry Kuttner & C. L. Moore.epub`
+[Move] `C L Moore`	to	`The Fairy Chessmen - Henry Kuttner & C. L. Moore.epub`
+[Move] `C L Moore`	to	`Project - Henry Kuttner & C. L. Moore.epub`
+[Move] `G C Edmondson`	to	`One Plus One Equals Eleven - G. C. Edmondson.epub`
+[Move] `Dean Ing`	to	`The Ransom Of Black Stealth One - Dean Ing.epub`
+[Move] `Dean Ing`	to	`Single Combat - Dean Ing.epub`
+[Move] `F E Hardart`	to	`The Beast Of Space - F.E. Hardart.epub`
+[Move] `A M Lightner`	to	`The Thursday Toads - A.M. Lightner.epub`
+[Move] `J T McIntosh`	to	`Ruler Of The World - J.T. Mcintosh.epub`
+[Move] `Ted Bell`	to	`Ted Bell - [Alexander Hawke 06] - Warlord (epub).epub`
